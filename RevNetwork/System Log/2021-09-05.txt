@@ -1,0 +1,48 @@
+2021-09-05 01:04:46 AM: Thread was being aborted.   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at RevNetwork.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Project Compilation\RevNetwork_v1\RevNetwork\Login.aspx.cs:line 70
+
+2021-09-05 01:05:12 AM: Thread was being aborted.   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at RevNetwork.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Project Compilation\RevNetwork_v1\RevNetwork\Login.aspx.cs:line 70
+
+2021-09-05 01:58:22 AM: Thread was being aborted.   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at RevNetwork.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Project Compilation\RevNetwork_v1\RevNetwork\Login.aspx.cs:line 70
+
+2021-09-05 01:46:26 PM: Thread was being aborted.   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at RevNetwork.Default.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Lee Dickson\Projects\Revotech\RevNetwork_v1_Alex_Prod\RevNetwork\Admin\Default.aspx.cs:line 76
+
+2021-09-05 01:48:17 PM: Thread was being aborted.   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at RevNetwork.Default.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Lee Dickson\Projects\Revotech\RevNetwork_v1_Alex_Prod\RevNetwork\Admin\Default.aspx.cs:line 76
+
+2021-09-05 01:52:16 PM: Thread was being aborted.   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at RevNetwork.Default.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Lee Dickson\Projects\Revotech\RevNetwork_v1_Alex_Prod\RevNetwork\Admin\Default.aspx.cs:line 76
+

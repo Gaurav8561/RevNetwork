@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="titlePageEmailConfigurationSetup" xml:space="preserve">
+    <value>Email Setup</value>
+  </data>
+  <data name="titlePageGeneralConfigurationSetup" xml:space="preserve">
+    <value>Configuration Setup</value>
+  </data>
+  <data name="typeEnum.actionafterwarning.cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="typeEnum.actionafterwarning.ignore" xml:space="preserve">
+    <value>Ignore</value>
+  </data>
+  <data name="typeEnum.agentRole.agent" xml:space="preserve">
+    <value>Agent</value>
+  </data>
+  <data name="typeEnum.branchRole.branch" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="typeEnum.branchRole.centre" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="typeEnum.branchRole.group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="typeEnum.configurationName.archiveNextRunDate" xml:space="preserve">
+    <value>Archive Next Run Date</value>
+  </data>
+  <data name="typeEnum.configurationName.commissionRate" xml:space="preserve">
+    <value>Commission Rate</value>
+  </data>
+  <data name="typeEnum.configurationName.dataAgeToArchiveInMonths" xml:space="preserve">
+    <value>Data Age to Archive (Months)</value>
+  </data>
+  <data name="typeEnum.configurationName.minStudentAge" xml:space="preserve">
+    <value>Minimum Student Age to Register</value>
+  </data>
+  <data name="typeEnum.configurationName.notifyBeforeExpiryNextRunDate" xml:space="preserve">
+    <value>Notification Before Expiry Next Run Date</value>
+  </data>
+  <data name="typeEnum.configurationName.notifyDaysBeforeExpiry" xml:space="preserve">
+    <value>Number of Days to Notify Before Expiry</value>
+  </data>
+  <data name="typeEnum.configurationName.regFormalisationDaysDuration" xml:space="preserve">
+    <value>No. of Days to Register By</value>
+  </data>
+  <data name="typeEnum.configurationName.systemAdminEmail" xml:space="preserve">
+    <value>System Admin Email</value>
+  </data>
+  <data name="typeEnum.contactRole.contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="typeEnum.creditusagemode.custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="typeEnum.creditusagemode.daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="typeEnum.creditusagemode.monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="typeEnum.creditusagemode.weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="typeEnum.creditusagemode.yearly" xml:space="preserve">
+    <value>Yearly</value>
+  </data>
+  <data name="typeEnum.durationformat.day" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="typeEnum.durationformat.month" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="typeEnum.durationformat.year" xml:space="preserve">
+    <value>Yearly</value>
+  </data>
+  <data name="typeEnum.emailConfigName.emailAddress" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="typeEnum.emailConfigName.emailEnableSSL" xml:space="preserve">
+    <value>Enable SSL</value>
+  </data>
+  <data name="typeEnum.emailConfigName.emailHost" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="typeEnum.emailConfigName.emailName" xml:space="preserve">
+    <value>Email Name</value>
+  </data>
+  <data name="typeEnum.emailConfigName.emailPassword" xml:space="preserve">
+    <value>Password (Leave blank unless changes are intended)</value>
+  </data>
+  <data name="typeEnum.emailConfigName.emailPort" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="typeEnum.gender.female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="typeEnum.gender.male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="typeEnum.idType.mys.armyID" xml:space="preserve">
+    <value>Malaysian Army Identity (BAT C. 10)</value>
+  </data>
+  <data name="typeEnum.idType.mys.ic.new" xml:space="preserve">
+    <value>New Malaysian Identity Card (MyKad)</value>
+  </data>
+  <data name="typeEnum.idType.mys.ic.old" xml:space="preserve">
+    <value>Old Malaysian Identity Card</value>
+  </data>
+  <data name="typeEnum.idType.mys.mykid" xml:space="preserve">
+    <value>Malaysian Birth Certificate (MyKid)</value>
+  </data>
+  <data name="typeEnum.idType.mys.policeID" xml:space="preserve">
+    <value>Malaysian Police Identity</value>
+  </data>
+  <data name="typeEnum.idType.mys.pr" xml:space="preserve">
+    <value>Malaysian Permanent Resident (MyPR)</value>
+  </data>
+  <data name="typeEnum.idType.passport" xml:space="preserve">
+    <value>Passport</value>
+  </data>
+  <data name="typeEnum.idType.passport.icao" xml:space="preserve">
+    <value>Passport (ICAO)</value>
+  </data>
+  <data name="typeEnum.maritalStatus.divorced" xml:space="preserve">
+    <value>Divorced</value>
+  </data>
+  <data name="typeEnum.maritalStatus.married" xml:space="preserve">
+    <value>Married</value>
+  </data>
+  <data name="typeEnum.maritalStatus.single" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="typeEnum.maritalStatus.widowed" xml:space="preserve">
+    <value>Widowed</value>
+  </data>
+  <data name="typeEnum.paymentinterval.monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="typeEnum.paymentinterval.once" xml:space="preserve">
+    <value>Once</value>
+  </data>
+  <data name="typeEnum.paymentinterval.yearly" xml:space="preserve">
+    <value>Yearly</value>
+  </data>
+  <data name="typeEnum.refferalCodeType.oneTime" xml:space="preserve">
+    <value>One-Time</value>
+  </data>
+  <data name="typeEnum.refferalCodeType.reusable" xml:space="preserve">
+    <value>Reusable</value>
+  </data>
+  <data name="typeEnum.regStatus.expired" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="typeEnum.regStatus.pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="typeEnum.regStatus.registered" xml:space="preserve">
+    <value>Registered</value>
+  </data>
+  <data name="typeEnum.remindertype.after" xml:space="preserve">
+    <value>After</value>
+  </data>
+  <data name="typeEnum.remindertype.before" xml:space="preserve">
+    <value>Before</value>
+  </data>
+  <data name="typeEnum.status.active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="typeEnum.status.deleted" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="typeEnum.status.suspended" xml:space="preserve">
+    <value>Suspended</value>
+  </data>
+  <data name="typeEnum.transactiondescription.cashpayment" xml:space="preserve">
+    <value>Cash Payment</value>
+  </data>
+  <data name="typeEnum.transactiondescription.expire" xml:space="preserve">
+    <value>Expire</value>
+  </data>
+  <data name="typeEnum.transactiondescription.interest" xml:space="preserve">
+    <value>Bonus+</value>
+  </data>
+  <data name="typeEnum.transactiondescription.membership" xml:space="preserve">
+    <value>Membership</value>
+  </data>
+  <data name="typeEnum.transactiondescription.purchase" xml:space="preserve">
+    <value>eWallet Payment</value>
+  </data>
+  <data name="typeEnum.transactiondescription.topup" xml:space="preserve">
+    <value>eWallet Topup</value>
+  </data>
+  <data name="typeEnum.unpaidaction.cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="typeEnum.unpaidaction.ignore" xml:space="preserve">
+    <value>Ignore</value>
+  </data>
+  <data name="typeEnum.unpaidaction.warnandaction" xml:space="preserve">
+    <value>Warn and Action</value>
+  </data>
+  <data name="typeEnum.upgrademode.purchase" xml:space="preserve">
+    <value>Purchase</value>
+  </data>
+  <data name="typeEnum.upgrademode.topup" xml:space="preserve">
+    <value>Topup</value>
+  </data>
+  <data name="typeEnum.userRole.branchAdmin" xml:space="preserve">
+    <value>Branch Admin</value>
+  </data>
+  <data name="typeEnum.userRole.centreAdmin" xml:space="preserve">
+    <value>Centre Admin</value>
+  </data>
+  <data name="typeEnum.userRole.groupAdmin" xml:space="preserve">
+    <value>Group Admin</value>
+  </data>
+  <data name="typeEnum.userRole.userAdmin" xml:space="preserve">
+    <value>User Admin</value>
+  </data>
+</root>

@@ -1,0 +1,424 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="RevNetwork.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Required meta tags -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- End Required meta tags -->
+    <!-- Begin SEO tag -->
+    <title><%=Resources.Resources.labelSystemName %></title>
+    <link rel="canonical" href="">
+    <!-- End SEO tag -->
+    <!-- FAVICONS -->
+    <%--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://uselooper.com/1.0.0/assets/apple-touch-icon.png">--%>
+    <%--<link rel="shortcut icon" href="https://uselooper.com/1.0.0/assets/favicon.ico">--%>
+    <meta name="theme-color" content="#3063A0">
+    <!-- End FAVICONS -->
+    <script src="Scripts/pace.min.js"></script>
+
+    <!-- BEGIN BASE STYLES -->
+    
+
+    <link href="Content/pace.min.css" rel="stylesheet" />
+
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+
+    <link href="Content/open-iconic-bootstrap.min.css" rel="stylesheet" />
+
+
+
+    <link href="Content/fontawesome-all.min.css" rel="stylesheet" />
+
+    <!-- END BASE STYLES -->
+    <!-- BEGIN PLUGINS STYLES -->
+
+    <link href="Content/flatpickr.min.css" rel="stylesheet" />
+
+    <!-- END PLUGINS STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="Content/main.min.css" rel="stylesheet" />
+
+    <%--<link href="Content/theme.min.css" rel="stylesheet" />--%>
+
+    <link href="Content/custom.css" rel="stylesheet" />
+
+    <!-- END THEME STYLES -->
+  <style type="text/css">/* Chart.js */
+        @-webkit-keyframes chartjs-render-animation
+        {from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}
+
+  </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="pace-done">
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <script src="Scripts/jquery-3.4.1.min.js"></script>
+        <script src="Scripts/jquery.mask.min.js"></script>
+
+        <!-- .app -->
+    <div class="app">
+      <!-- .app-header -->
+      <header class="app-header">
+        <!-- .top-bar -->
+        <div class="top-bar">
+          <!-- .top-bar-brand -->
+          <div class="top-bar-brand">
+            <a href="Dashboard.aspx">
+                <img src="../Resource/logo.png" height="32"/>
+            </a>
+          </div>
+          <!-- /.top-bar-brand -->
+          <!-- .top-bar-list -->
+          <div class="top-bar-list">
+            <!-- .top-bar-item -->
+            <div class="top-bar-item px-2 d-md-none d-lg-none d-xl-none">
+              <!-- toggle menu -->
+              <button class="hamburger hamburger-squeeze" type="button" data-toggle="aside" aria-label="Menu" aria-controls="navigation" style="background-color:darkgrey">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+              <!-- /toggle menu -->
+            </div>
+            <!-- /.top-bar-item -->
+            <!-- .top-bar-item -->
+            <div class="top-bar-item top-bar-item-full">
+              <!-- .top-bar-search -->
+
+              <!-- /.top-bar-search -->
+            </div>
+            <!-- /.top-bar-item -->
+            <!-- .top-bar-item -->
+            <div class="top-bar-item top-bar-item-right px-0 d-none d-sm-flex">
+              
+                
+
+              <!-- .btn-account -->
+              <div class="dropdown" style="background-color: rgba(0,0,0,.20); color:black">
+                <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="account-summary pr-lg-4 d-none d-lg-block">
+                    <span class="account-name"><%= m_usriCurrent.Name %></span>
+                    <span class="account-description"><%= m_strUserRoleTitle %></span>
+                  </span>
+                </button>
+                <div class="dropdown-arrow dropdown-arrow-left"></div>
+                <!-- .dropdown-menu -->
+                <div class="dropdown-menu">
+                  <h6 class="dropdown-header d-none d-md-block d-lg-none"><%= m_usriCurrent.Name %></h6>
+
+
+
+                    <asp:LinkButton ID="lbtLogoutDesktop" runat="server" class="dropdown-item" OnClick="lbtLogoutDesktop_Click"><span class="dropdown-icon oi oi-account-logout"></span> Logout</asp:LinkButton>
+                    
+ 
+  
+              
+                </div>
+                <!-- /.dropdown-menu -->
+              </div>
+              <!-- /.btn-account -->
+            </div>
+            <!-- /.top-bar-item -->
+          </div>
+          <!-- /.top-bar-list -->
+        </div>
+        <!-- /.top-bar -->
+      </header>
+      <!-- /.app-header -->
+      <!-- .app-aside -->
+      <aside class="app-aside">
+        <!-- .aside-content -->
+        <div class="aside-content">
+          <!-- .aside-header -->
+          <header class="aside-header d-block d-md-none">
+            <!-- .btn-account -->
+            <button class="btn-account" type="button" data-toggle="collapse" data-target="#dropdown-aside">
+     
+              <span class="account-icon">
+                <span class="fa fa-caret-down fa-lg"></span>
+              </span>
+              <span class="account-summary">
+                <span class="account-name"><%= m_usriCurrent.Name %></span>
+                <span class="account-description"><%= m_strUserRoleTitle %></span>
+              </span>
+            </button>
+            <!-- /.btn-account -->
+            <!-- .dropdown-aside -->
+            <div id="dropdown-aside" class="dropdown-aside collapse">
+              <!-- dropdown-items -->
+              <div class="pb-3">
+         
+
+                  <asp:LinkButton ID="lbtLogoutMobile" runat="server" class="dropdown-item" OnClick="lbtLogoutMobile_Click"><span class="dropdown-icon oi oi-account-logout"></span> Logout</asp:LinkButton>
+
+       
+               
+       
+              </div>
+              <!-- /dropdown-items -->
+            </div>
+            <!-- /.dropdown-aside -->
+          </header>
+          <!-- /.aside-header -->
+          <!-- .aside-menu -->
+          <section class="aside-menu has-scrollable ps ps--active-y">
+            <!-- .stacked-menu -->
+            <nav id="stacked-menu" class="stacked-menu stacked-menu-has-collapsible">
+              <!-- .menu -->
+              <ul class="menu">
+                <!-- .menu-item -->
+                <li class="menu-item has-active" id="parentMenuDashboard" runat="server">
+                  <a href="Dashboard.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-dashboard"></span>
+                    <span class="menu-text">Dashboard</span>
+                  </a>
+                </li>
+
+
+                <%--<li class="menu-item has-child" id="parentMenuContact" runat="server">
+                      <a href="#" class="menu-link">
+                          <span class="menu-icon oi oi-people"></span>
+                          <span class="menu-text">Contact</span>
+                      </a>
+ 
+                      <ul class="menu">
+                          <li class="menu-item">
+                              <a href="ContactList.aspx" class="menu-link" tabindex="-1"><%=Resources.Resources.titleContactList %></a>
+                          </li>
+                          <li class="menu-item">
+                              <a href="Contact.aspx" class="menu-link" tabindex="-1"><%=Resources.Resources.titleNewContact %></a>
+                          </li>                      
+                      </ul>
+            
+                  </li>--%>
+
+
+
+                  <%--<li class="menu-item">
+                  <a href="/ReferralList.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-envelope-closed"></span>
+                    <span class="menu-text">Announcement</span>
+                  </a>
+                </li>
+   
+
+
+                  <li class="menu-item">
+                  <a href="/ReferralList.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-envelope-closed"></span>
+                    <span class="menu-text">Email</span>
+                  </a>
+                </li>
+
+                  <li class="menu-item">
+                  <a href="/ReferralList.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-chat"></span>
+                    <span class="menu-text">SMS</span>
+                  </a>
+                </li>--%>
+
+       
+
+
+<%--                  <li class="menu-item has-child" id="parentMenuMembership" runat="server">
+                      <a href="#" class="menu-link">
+                          <span class="menu-icon oi oi-fork"></span>
+                          <span class="menu-text">Membership</span>
+                      </a>
+ 
+                      <ul class="menu">
+                 
+                          <li class="menu-item">
+                              <a href="MembershipPlanList.aspx" class="menu-link" tabindex="-1">Plan List</a>
+                          </li>
+                        
+                      </ul>
+            
+                  </li>--%>
+
+
+
+          
+
+                 <%-- <li class="menu-item">
+                  <a href="/ReferralList.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-layers"></span>
+                    <span class="menu-text">Voucher</span>
+                  </a>
+                </li>--%>
+
+
+                  
+
+
+                  <%--<li class="menu-item" id="parentMenuWallet" runat="server">
+                  <a href="WalletPocketList.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-dollar"></span>
+                    <span class="menu-text">Wallet</span>
+                  </a>
+                </li>--%>
+
+
+
+                  <li class="menu-item" id="parentMenuUser" runat="server">
+                  <a href="UserList.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-person"></span>
+                    <span class="menu-text">User</span>
+                  </a>
+                </li>
+		
+		
+		<%--<li class="menu-item">
+                  <a href="Paymentv2.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-layers"></span>
+                    <span class="menu-text">Payment</span>
+                  </a>
+                </li>--%>
+		
+		
+		
+	<%--	<li class="menu-item">
+                  <a href="/PaymentScan.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-layers"></span>
+                    <span class="menu-text">Payment Scan</span>
+                  </a>
+                </li>--%>
+
+
+                  <%--<li class="menu-item">
+                  <a href="Topupv2.aspx" class="menu-link">
+                    <span class="menu-icon oi oi-layers"></span>
+                    <span class="menu-text">Topup</span>
+                  </a>
+                </li>--%>
+
+
+
+                <%--  <li class="menu-item has-child" id="parentMenuReport" runat="server">
+                      <a href="#" class="menu-link">
+                          <span class="menu-icon oi oi-fork"></span>
+                          <span class="menu-text">Report</span>
+                      </a>
+ 
+                      <ul class="menu">
+                    
+                          <li class="menu-item">
+                              <a href="ReportWalletPurchase.aspx" class="menu-link" tabindex="-1">Wallet Credit Purchase</a>
+                          </li>
+
+                          <li class="menu-item">
+                              <a href="ReportWalletCashPurchase.aspx" class="menu-link" tabindex="-1">Wallet Cash Purchase</a>
+                          </li>
+
+
+                         
+                      </ul>
+            
+                  </li>--%>
+
+
+
+
+                <!-- /.menu-item -->
+              </ul>
+              <!-- /.menu -->
+            </nav>
+            <!-- /.stacked-menu -->
+          <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 913px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 898px;"></div></div></section>
+          <!-- /.aside-menu -->
+        </div>
+        <!-- /.aside-content -->
+      </aside>
+      <!-- /.app-aside -->
+      <!-- .app-main -->
+
+
+        <main class="app-main">
+            <div class="wrapper">
+                <div class="page">
+                    <div class="sidebar-backdrop"></div>
+                    <div class="page-inner">
+
+                        <asp:ContentPlaceHolder ID="body" runat="server">
+                        </asp:ContentPlaceHolder>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+      
+    <div class="app-backdrop"></div></div>
+    <!-- /.app -->
+    <!-- BEGIN BASE JS -->
+      <script src="Scripts/umd/popper.min.js"></script>
+
+
+      <script src="Scripts/bootstrap.min.js"></script>
+
+
+    <!-- END BASE JS -->
+    <!-- BEGIN PLUGINS JS -->
+      <script src="Scripts/stacked-menu.min.js"></script>
+
+      <script src="Scripts/perfect-scrollbar.min.js"></script>
+
+      <script src="Scripts/flatpickr.min.js"></script>
+
+
+      <script src="Scripts/Chart.min.js"></script>
+
+    <!-- END PLUGINS JS -->
+    <!-- BEGIN THEME JS -->
+      <script src="Scripts/main.min.js"></script>
+
+
+
+
+
+    <!-- END PAGE LEVEL JS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+            function BeginRequestHandler(sender, args) { var oControl = args.get_postBackElement(); oControl.disabled = true; }
+        </script>
+
+
+
+
+
+
+
+
+    </form>
+
+<%--    <script src="Scripts/jquery-3.4.1.slim.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>--%>
+</body>
+</html>

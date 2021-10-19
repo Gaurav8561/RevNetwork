@@ -1,0 +1,2 @@
+Resgen Resource_TypeEnumerator.en-MY.resx.resx
+Al.exe /t:lib /embed: Resource_TypeEnumerator.en-MY.resources /culture:en-MY /out:Resource_TypeEnumerator.resources.dll
