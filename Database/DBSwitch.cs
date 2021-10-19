@@ -17,6 +17,9 @@ namespace Database
             MySQL
         }
 
+
+
+
         public static DBSwitchVariablesAttribute GetVariables()
         {
             return (DBSwitchVariablesAttribute)typeof(DBType).GetMember(CURRENT_DB.ToString()).Single(m => m.DeclaringType == typeof(DBType)).GetCustomAttribute(typeof(DBSwitchVariablesAttribute), false);
