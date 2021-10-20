@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Required meta tags -->
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- End Required meta tags -->
     <!-- Begin SEO tag -->
@@ -47,11 +47,33 @@
     <link href="Content/custom.css" rel="stylesheet" />
 
     <!-- END THEME STYLES -->
-  <style type="text/css">/* Chart.js */
-        @-webkit-keyframes chartjs-render-animation
-        {from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}
+    <style type="text/css">
+        /* Chart.js */
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
 
-  </style>
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -64,25 +86,25 @@
         <script src="Scripts/jquery.mask.min.js"></script>
 
         <!-- .app -->
-    <div class="app">
-      <!-- .app-header -->
-      <header class="app-header" style="background-color:#C5262B; height:150px;">
-        <!-- .top-bar -->
-        <div class="top-bar" style="height:150px;">
-          <!-- .top-bar-brand -->
-          <div class="top-bar-brand" style="height:150px;">
-            <a href="ContactDefault.aspx">
-                <img src="../Resource/nbg.png" height="32"/>
-            </a>
-          </div>
-          <!-- /.top-bar-brand -->
-          <!-- .top-bar-list -->
-          <div class="top-bar-list" style="background-color:#C5262B;">
-            <!-- .top-bar-item -->
-            <div class="top-bar-item px-2 d-md-none d-lg-none d-xl-none">
-              <!-- toggle menu -->
+        <div class="app">
+            <!-- .app-header -->
+            <header class="app-header" style="background-color: #C5262B; height: 150px;">
+                <!-- .top-bar -->
+                <div class="top-bar" style="height: 150px;">
+                    <!-- .top-bar-brand -->
+                    <div class="top-bar-brand" style="height: 150px;">
+                        <a href="ContactDefault.aspx">
+                            <img src="../Resource/nbg.png" height="32" />
+                        </a>
+                    </div>
+                    <!-- /.top-bar-brand -->
+                    <!-- .top-bar-list -->
+                    <div class="top-bar-list" style="background-color: #C5262B;">
+                        <!-- .top-bar-item -->
+                        <div class="top-bar-item px-2 d-md-none d-lg-none d-xl-none">
+                            <!-- toggle menu -->
 
-                <%--<asp:Panel ID="PnlHamburger" runat="server" Visible="False">
+                            <%--<asp:Panel ID="PnlHamburger" runat="server" Visible="False">
                     <button class="hamburger hamburger-squeeze" type="button" data-toggle="aside" aria-label="Menu" aria-controls="navigation" style="background-color:#C5262B">
                         <span class="hamburger-box">
                           <span class="hamburger-inner"></span>
@@ -92,159 +114,154 @@
 
 
 
-              
-              <!-- /toggle menu -->
+
+                            <!-- /toggle menu -->
 
 
-<%
-    if (HttpContext.Current.Session["UserInfo"] != null)
-    {
-%>
-                <div style="position:absolute;">
-                    <table style="width:100vw">
-                        <tr>
-                            <td colspan="2" style="padding-left:15px;">
-                            
-                                    Hi, <span class="account-name"><%= m_usriCurrent.Name %></span>
-                                    <p><b>Welcome back</b></p>
-                            
-                            </td>
-                        
-                        </tr>
-                        <tr>
-                            <td style="width:50vw; text-align: center; border-right-width:1px; border-right-style:solid;">
-                                <div>
-                                    My Wallet
+                            <%
+                                if (HttpContext.Current.Session["UserInfo"] != null)
+                                {
+                            %>
+                            <div style="position: absolute;">
+                                <table style="width: 100vw">
+                                    <tr>
+                                        <td colspan="2" style="padding-left: 15px;">Hi, <span class="account-name"><%= m_usriCurrent.Name %></span>
+                                            <p><b>Welcome back</b></p>
+
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50vw; text-align: center; border-right-width: 1px; border-right-style: solid;">
+                                            <div>
+                                                My Wallet
                                     <br />
-                                    <a href="ContactTransactionHistory.aspx" style="color:white"><u><%= m_strWalletBalance %> credit</u></a>
+                                                <a href="ContactTransactionHistory.aspx" style="color: white"><u><%= m_strWalletBalance %> credit</u></a>
+                                            </div>
+                                        </td>
+
+                                        <td style="width: 50vw; text-align: center;">
+                                            <div>
+                                                My Point
+                                    <br />
+                                                <a href="ContactPointTransactionHistory.aspx" style="color: white"><u><%= m_strPointBalance %> point</u></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+
+
+
+
+
+                            <%
+                            }
+                            else
+                            {
+                            %>
+
+
+                            <div style="position: absolute; margin-left: 26vw;">
+                                <a href="ContactDefault.aspx">
+                                    <img src="../Resource/nbg.png" height="50" />
+                                </a>
+                            </div>
+
+                            <%
+                                }
+                            %>
+                        </div>
+                        <!-- /.top-bar-item -->
+                        <!-- .top-bar-item -->
+                        <div class="top-bar-item top-bar-item-full">
+                            <!-- .top-bar-search -->
+
+                            <!-- /.top-bar-search -->
+                        </div>
+                        <!-- /.top-bar-item -->
+                        <!-- .top-bar-item -->
+                        <div class="top-bar-item top-bar-item-right px-0 d-none d-sm-flex">
+
+
+
+                            <!-- .btn-account -->
+                            <div class="dropdown" style="background-color: rgba(0,0,0,.20); color: black">
+                                <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 150px;">
+                                    <span class="account-summary pr-lg-4 d-none d-lg-block">
+                                        <span class="account-name"><%= m_usriCurrent.Name %></span>
+                                        <span class="account-description"><%= m_strUserRoleTitle %></span>
+                                    </span>
+                                </button>
+                                <div class="dropdown-arrow dropdown-arrow-left"></div>
+                                <!-- .dropdown-menu -->
+                                <div class="dropdown-menu">
+                                    <h6 class="dropdown-header d-none d-md-block d-lg-none"><%= m_usriCurrent.Name %></h6>
+
+
+
+                                    <asp:LinkButton ID="lbtLogoutDesktop" runat="server" class="dropdown-item" OnClick="lbtLogoutDesktop_Click"><span class="dropdown-icon oi oi-account-logout"></span> Logout</asp:LinkButton>
+
+
+
+
                                 </div>
-                            </td>
-                            
-                            <td style="width:50vw; text-align: center;">
-                                <div>
-                                    My Point
-                                    <br />
-                                    <a href="ContactPointTransactionHistory.aspx" style="color:white"><u><%= m_strPointBalance %> point</u></a>
-                                </div>                            
-                            </td>
-                        </tr>
-                    </table>
+                                <!-- /.dropdown-menu -->
+                            </div>
+                            <!-- /.btn-account -->
+                        </div>
+                        <!-- /.top-bar-item -->
+                    </div>
+                    <!-- /.top-bar-list -->
                 </div>
-                
-                
+                <!-- /.top-bar -->
+            </header>
+            <!-- /.app-header -->
+            <!-- .app-aside -->
+            <aside class="app-aside" style="background-color: #C5262B;">
+                <!-- .aside-content -->
+                <div class="aside-content">
+                    <!-- .aside-header -->
+                    <header class="aside-header d-block d-md-none" style="background-color: #C5262B;">
+                        <!-- .btn-account -->
+                        <button class="btn-account" type="button" data-toggle="collapse" data-target="#dropdown-aside" style="height: 150px;">
 
-                
-                
+                            <span class="account-icon">
+                                <span class="fa fa-caret-down fa-lg"></span>
+                            </span>
+                            <span class="account-summary" style="color: white;">
+                                <span class="account-name"><%= m_usriCurrent.Name %></span>
+                                <span class="account-description"><%= m_strUserRoleTitle %></span>
+                            </span>
+                        </button>
+                        <!-- /.btn-account -->
+                        <!-- .dropdown-aside -->
+                        <div id="dropdown-aside" class="dropdown-aside collapse" style="background-color: #C5262B;">
+                            <!-- dropdown-items -->
+                            <div class="pb-3">
 
 
-<%
-    }
-    else
-    {
-%>
-                
-
-                <div style="position:absolute; margin-left:26vw;">
-                    <a href="ContactDefault.aspx">
-                        <img src="../Resource/nbg.png" height="50"/>
-                    </a>
-                </div>
-
-<%
-    }
-%>
-                
-
-
-            </div>
-            <!-- /.top-bar-item -->
-            <!-- .top-bar-item -->
-            <div class="top-bar-item top-bar-item-full">
-              <!-- .top-bar-search -->
-                
-              <!-- /.top-bar-search -->
-            </div>
-            <!-- /.top-bar-item -->
-            <!-- .top-bar-item -->
-            <div class="top-bar-item top-bar-item-right px-0 d-none d-sm-flex">
-              
-                
-
-              <!-- .btn-account -->
-              <div class="dropdown" style="background-color: rgba(0,0,0,.20); color:black">
-                <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:150px;">
-                  <span class="account-summary pr-lg-4 d-none d-lg-block">
-                    <span class="account-name"><%= m_usriCurrent.Name %></span>
-                    <span class="account-description"><%= m_strUserRoleTitle %></span>
-                  </span>
-                </button>
-                <div class="dropdown-arrow dropdown-arrow-left"></div>
-                <!-- .dropdown-menu -->
-                <div class="dropdown-menu">
-                  <h6 class="dropdown-header d-none d-md-block d-lg-none"><%= m_usriCurrent.Name %></h6>
+                                <asp:LinkButton ID="lbtLogoutMobile" runat="server" class="dropdown-item" OnClick="lbtLogoutMobile_Click" Style="color: white;"><span class="dropdown-icon oi oi-account-logout" style="color:white;"></span> Logout</asp:LinkButton>
 
 
 
-                    <asp:LinkButton ID="lbtLogoutDesktop" runat="server" class="dropdown-item" OnClick="lbtLogoutDesktop_Click"><span class="dropdown-icon oi oi-account-logout"></span> Logout</asp:LinkButton>
-                    
- 
-  
-              
-                </div>
-                <!-- /.dropdown-menu -->
-              </div>
-              <!-- /.btn-account -->
-            </div>
-            <!-- /.top-bar-item -->
-          </div>
-          <!-- /.top-bar-list -->
-        </div>
-        <!-- /.top-bar -->
-      </header>
-      <!-- /.app-header -->
-      <!-- .app-aside -->
-      <aside class="app-aside" style="background-color:#C5262B;">
-        <!-- .aside-content -->
-        <div class="aside-content">
-          <!-- .aside-header -->
-          <header class="aside-header d-block d-md-none" style="background-color:#C5262B;">
-            <!-- .btn-account -->
-            <button class="btn-account" type="button" data-toggle="collapse" data-target="#dropdown-aside" style="height:150px;">
-     
-              <span class="account-icon">
-                <span class="fa fa-caret-down fa-lg"></span>
-              </span>
-              <span class="account-summary" style="color:white;">
-                <span class="account-name"><%= m_usriCurrent.Name %></span>
-                <span class="account-description"><%= m_strUserRoleTitle %></span>
-              </span>
-            </button>
-            <!-- /.btn-account -->
-            <!-- .dropdown-aside -->
-            <div id="dropdown-aside" class="dropdown-aside collapse" style="background-color:#C5262B;">
-              <!-- dropdown-items -->
-              <div class="pb-3">
-         
 
-                  <asp:LinkButton ID="lbtLogoutMobile" runat="server" class="dropdown-item" OnClick="lbtLogoutMobile_Click" style="color:white;"><span class="dropdown-icon oi oi-account-logout" style="color:white;"></span> Logout</asp:LinkButton>
-
-       
-               
-       
-              </div>
-              <!-- /dropdown-items -->
-            </div>
-            <!-- /.dropdown-aside -->
-          </header>
-          <!-- /.aside-header -->
-          <!-- .aside-menu -->
-          <section class="aside-menu has-scrollable ps ps--active-y">
-            <!-- .stacked-menu -->
-            <nav id="stacked-menu" class="stacked-menu stacked-menu-has-collapsible" style="background-color:#C5262B;">
-              <!-- .menu -->
-              <ul class="menu">
-                <!-- .menu-item -->
-                <%--<li class="menu-item has-active" >
+                            </div>
+                            <!-- /dropdown-items -->
+                        </div>
+                        <!-- /.dropdown-aside -->
+                    </header>
+                    <!-- /.aside-header -->
+                    <!-- .aside-menu -->
+                    <section class="aside-menu has-scrollable ps ps--active-y">
+                        <!-- .stacked-menu -->
+                        <nav id="stacked-menu" class="stacked-menu stacked-menu-has-collapsible" style="background-color: #C5262B;">
+                            <!-- .menu -->
+                            <ul class="menu">
+                                <!-- .menu-item -->
+                                <%--<li class="menu-item has-active" >
                   <a href="ContactDashboard.aspx" class="menu-link" style="background-color:#C5262B;">
                     <span class="menu-icon oi oi-home" style="color:white;"></span>
                     <span class="menu-text" style="color:white; font-size: 15pt;">Home</span>
@@ -269,7 +286,7 @@
                   </a>
                 </li>--%>
 
-                  <%--<hr style="background-color:white; width:80%;" />
+                                <%--<hr style="background-color:white; width:80%;" />
 
                   <li class="menu-item" >
                   <a href="ContactWallet.aspx" class="menu-link">
@@ -281,7 +298,7 @@
                   <hr style="background-color:white; width:80%;" />--%>
 
 
-                  <%--<li class="menu-item">
+                                <%--<li class="menu-item">
                   <a href="ContactMembership.aspx" class="menu-link">
                     <span class="menu-icon oi oi-fork"></span>
                     <span class="menu-text">Membership</span>
@@ -289,21 +306,21 @@
                 </li>--%>
 
 
-                <%--<li class="menu-item">
+                                <%--<li class="menu-item">
                   <a href="ContactInboxList.aspx" class="menu-link">
                     <span class="menu-icon oi oi-envelope-open"></span>
                     <span class="menu-text">Inbox</span>
                   </a>
                 </li>--%>
 
-                <%--<li class="menu-item" >
+                                <%--<li class="menu-item" >
                   <a href="ContactTransactionHistory.aspx" class="menu-link">
                     <span class="menu-icon oi oi-transfer" style="color:white;"></span>
                     <span class="menu-text" style="color:white; font-size: 15pt;">Transaction History</span>
                   </a>
                 </li>--%>
 
-                  <%--<hr style="background-color:white; width:80%;" />
+                                <%--<hr style="background-color:white; width:80%;" />
 
                 <li class="menu-item" >
                   <a class="menu-link">
@@ -368,7 +385,7 @@
 
 
 
-                <%--<li class="menu-item">
+                                <%--<li class="menu-item">
                   <a href="ContactFeedback.aspx" class="menu-link">
                     <span class="menu-icon oi oi-bullhorn"></span>
                     <span class="menu-text">Feedback</span>
@@ -383,175 +400,182 @@
                   </a>
                 </li>--%>
 
-                <!-- /.menu-item -->
-              </ul>
-              <!-- /.menu -->
-            </nav>
-            <!-- /.stacked-menu -->
-          <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 913px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 898px;"></div></div></section>
-          <!-- /.aside-menu -->
-        </div>
-        <!-- /.aside-content -->
-      </aside>
-      <!-- /.app-aside -->
-      <!-- .app-main -->
+                                <!-- /.menu-item -->
+                            </ul>
+                            <!-- /.menu -->
+                        </nav>
+                        <!-- /.stacked-menu -->
+                        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                        </div>
+                        <div class="ps__rail-y" style="top: 0px; height: 913px; right: 0px;">
+                            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 898px;"></div>
+                        </div>
+                    </section>
+                    <!-- /.aside-menu -->
+                </div>
+                <!-- /.aside-content -->
+            </aside>
+            <!-- /.app-aside -->
+            <!-- .app-main -->
 
 
-        <main class="app-main">
-            <div class="wrapper" style="background-color:white;">
-                <div class="page">
-                    <div class="sidebar-backdrop"></div>
-                    <div class="page-inner" style="padding-bottom:100px;">
+            <main class="app-main">
+                <div class="wrapper" style="background-color: white;">
+                    <div class="page">
+                        <div class="sidebar-backdrop"></div>
+                        <div class="page-inner" style="padding-bottom: 100px;">
 
-                        <asp:ContentPlaceHolder ID="body" runat="server">
-                        </asp:ContentPlaceHolder>
+                            <asp:ContentPlaceHolder ID="body" runat="server">
+                            </asp:ContentPlaceHolder>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
 
 
 
-        <%--<nav class="navbar fixed-bottom navbar-dark bg-primary">--%>
-        <nav class="navbar fixed-bottom" style="background:white;box-shadow: 0 0 10px 1px;">
-          <div style="width:100%;">
-              <div class="row" >
+            <%--<nav class="navbar fixed-bottom navbar-dark bg-primary">--%>
+            <nav class="navbar fixed-bottom" style="background: white; box-shadow: 0 0 10px 1px;">
+                <div style="width: 100%;">
+                    <div class="row">
 
-                  <%-- Guest --%>
+                        <%-- Guest --%>
 
-<%
-    if (HttpContext.Current.Session["UserInfo"] != null)
-    {
-%>
-        <div class="col-2" style="text-align:center; margin-top:auto;">
-            <a href="ContactDefault.aspx" style="color:black;">
-                <%--<span class="menu-icon oi oi-person" style="color:white;"></span>--%>
-                <i class="btnIcon oi oi-home" style="font-size:20pt; color:#C5262B;"></i>
-                <span style="display:block; font-size:10pt; color:#C5262B;">Home</span>
-            </a>
-        </div>
+                        <%
+                            if (HttpContext.Current.Session["UserInfo"] != null)
+                            {
+                        %>
+                        <div class="col-2" style="text-align: center; margin-top: auto;">
+                            <a href="ContactDefault.aspx" style="color: black;">
+                                <%--<span class="menu-icon oi oi-person" style="color:white;"></span>--%>
+                                <i class="btnIcon oi oi-home" style="font-size: 20pt; color: #C5262B;"></i>
+                                <span style="display: block; font-size: 10pt; color: #C5262B;">Home</span>
+                            </a>
+                        </div>
 
-        <div class="col-3" style="text-align:center; margin-top:auto;">
-            <a href="ContactDefault.aspx" style="color:black;">
-                <i class="btnIcon oi oi-cart" style="font-size:22pt; color:#C5262B;"></i>
-                <span style="display:block; font-size:10pt; color:#C5262B;">Explore</span>
-            </a>
-        </div>
-
-
-        <div class="col-2" style="text-align:center; margin-top:5px;">
-            <a href="ContactScanning.aspx">
-                <img src="../Resource/ScanButton.png" alt="" style="width:42px;height:42px;">
-            </a>
-        </div>
-
-                    
-        <div class="col-3" style="text-align:center; margin-top:auto;">
-            <a href="ContactQR.aspx" style="color:black;">
-                <%--<span class="menu-icon oi oi-person" style="color:white;"></span>--%>
-                <i class="btnIcon fa fa-qrcode" style="font-size:20pt; color:#C5262B;"></i>
-                <span style="display:block; font-size:10pt; color:#C5262B;">QR Code</span>
-            </a>
-        </div>
-        <div class="col-2" style="text-align:center; margin-top:auto;">
-            <a href="ContactMenu.aspx" style="color:black;">
-                <i class="btnIcon oi oi-person" style="font-size:18pt; color:#C5262B;"></i>
-                <span style="display:block; font-size:10pt; color:#C5262B;">Me</span>
-            </a>
-        </div>
-        
+                        <div class="col-3" style="text-align: center; margin-top: auto;">
+                            <a href="ContactDefault.aspx" style="color: black;">
+                                <i class="btnIcon oi oi-cart" style="font-size: 22pt; color: #C5262B;"></i>
+                                <span style="display: block; font-size: 10pt; color: #C5262B;">Explore</span>
+                            </a>
+                        </div>
 
 
-
-<%
-    }
-    else
-    {
-%>
-        <div class="col-3" style="text-align:center; margin-top:auto;">
-            <a href="ContactDefault.aspx" style="color:black;">
-                <%--<span class="menu-icon oi oi-person" style="color:white;"></span>--%>
-                <i class="btnIcon oi oi-home" style="font-size:20pt; color:#C5262B;"></i>
-                <span style="display:block; font-size:10pt; color:#C5262B;">Home</span>
-            </a>
-        </div>
-                    
-        <div class="col-3" style="text-align:center; margin-top:auto;">
-            <a href="Login.aspx" style="color:black;">
-                <%--<span class="menu-icon oi oi-person" style="color:white;"></span>--%>
-                <i class="btnIcon oi oi-person" style="font-size:18pt; color:#C5262B;"></i>
-                <span style="display:block; font-size:10pt; color:#C5262B;">Login</span>
-            </a>
-        </div>
-        <div class="col-3" style="text-align:center; margin-top:auto;">
-            <a href="ContactExtv3.aspx" style="color:black;">
-                <i class="btnIcon oi oi-task" style="font-size:20pt; color:#C5262B;"></i>
-                <span style="display:block; font-size:10pt; color:#C5262B;">Signup</span>
-            </a>
-        </div>
-        <div class="col-3" style="text-align:center; margin-top:auto;">
-            <a href="ContactDefault.aspx" style="color:black;">
-                <i class="btnIcon oi oi-cart" style="font-size:22pt; color:#C5262B;"></i>
-                <span style="display:block; font-size:10pt; color:#C5262B;">Explore</span>
-            </a>
-        </div>
+                        <div class="col-2" style="text-align: center; margin-top: 5px;">
+                            <a href="ContactScanning.aspx">
+                                <img src="../Resource/ScanButton.png" alt="" style="width: 42px; height: 42px;">
+                            </a>
+                        </div>
 
 
-<%
-    }
-%>
-
-
-                  <%-- Member --%>
+                        <div class="col-3" style="text-align: center; margin-top: auto;">
+                            <a href="ContactQR.aspx" style="color: black;">
+                                <%--<span class="menu-icon oi oi-person" style="color:white;"></span>--%>
+                                <i class="btnIcon fa fa-qrcode" style="font-size: 20pt; color: #C5262B;"></i>
+                                <span style="display: block; font-size: 10pt; color: #C5262B;">QR Code</span>
+                            </a>
+                        </div>
+                        <div class="col-2" style="text-align: center; margin-top: auto;">
+                            <a href="ContactMenu.aspx" style="color: black;">
+                                <i class="btnIcon oi oi-person" style="font-size: 18pt; color: #C5262B;"></i>
+                                <span style="display: block; font-size: 10pt; color: #C5262B;">Me</span>
+                            </a>
+                        </div>
 
 
 
-                    
-                    <%--<div class="col-2">
+
+                        <%
+                        }
+                        else
+                        {
+                        %>
+                        <div class="col-3" style="text-align: center; margin-top: auto;">
+                            <a href="ContactDefault.aspx" style="color: black;">
+                                <%--<span class="menu-icon oi oi-person" style="color:white;"></span>--%>
+                                <i class="btnIcon oi oi-home" style="font-size: 20pt; color: #C5262B;"></i>
+                                <span style="display: block; font-size: 10pt; color: #C5262B;">Home</span>
+                            </a>
+                        </div>
+
+                        <div class="col-3" style="text-align: center; margin-top: auto;">
+                            <a href="Login.aspx" style="color: black;">
+                                <%--<span class="menu-icon oi oi-person" style="color:white;"></span>--%>
+                                <i class="btnIcon oi oi-person" style="font-size: 18pt; color: #C5262B;"></i>
+                                <span style="display: block; font-size: 10pt; color: #C5262B;">Login</span>
+                            </a>
+                        </div>
+                        <div class="col-3" style="text-align: center; margin-top: auto;">
+                            <a href="ContactExtv3.aspx" style="color: black;">
+                                <i class="btnIcon oi oi-task" style="font-size: 20pt; color: #C5262B;"></i>
+                                <span style="display: block; font-size: 10pt; color: #C5262B;">Signup</span>
+                            </a>
+                        </div>
+                        <div class="col-3" style="text-align: center; margin-top: auto;">
+                            <a href="ContactDefault.aspx" style="color: black;">
+                                <i class="btnIcon oi oi-cart" style="font-size: 22pt; color: #C5262B;"></i>
+                                <span style="display: block; font-size: 10pt; color: #C5262B;">Explore</span>
+                            </a>
+                        </div>
+
+
+                        <%
+                            }
+                        %>
+
+
+                        <%-- Member --%>
+
+
+
+
+                        <%--<div class="col-2">
                         <a class="navbar-brand" href="#">Fixed</a>
                     </div>--%>
+                    </div>
                 </div>
-          </div>
-                
-                
-            
-
-
-
-          
-        </nav>
-
-      
-    <div class="app-backdrop"></div></div>
-    <!-- /.app -->
-    <!-- BEGIN BASE JS -->
-      <script src="Scripts/umd/popper.min.js"></script>
-
-
-      <script src="Scripts/bootstrap.min.js"></script>
-
-
-    <!-- END BASE JS -->
-    <!-- BEGIN PLUGINS JS -->
-      <script src="Scripts/stacked-menu.min.js"></script>
-
-      <script src="Scripts/perfect-scrollbar.min.js"></script>
-
-      <script src="Scripts/flatpickr.min.js"></script>
-
-
-      <script src="Scripts/Chart.min.js"></script>
-
-    <!-- END PLUGINS JS -->
-    <!-- BEGIN THEME JS -->
-      <script src="Scripts/main.min.js"></script>
 
 
 
 
 
-    <!-- END PAGE LEVEL JS -->
+
+
+            </nav>
+
+
+            <div class="app-backdrop"></div>
+        </div>
+        <!-- /.app -->
+        <!-- BEGIN BASE JS -->
+        <script src="Scripts/umd/popper.min.js"></script>
+
+
+        <script src="Scripts/bootstrap.min.js"></script>
+
+
+        <!-- END BASE JS -->
+        <!-- BEGIN PLUGINS JS -->
+        <script src="Scripts/stacked-menu.min.js"></script>
+
+        <script src="Scripts/perfect-scrollbar.min.js"></script>
+
+        <script src="Scripts/flatpickr.min.js"></script>
+
+
+        <script src="Scripts/Chart.min.js"></script>
+
+        <!-- END PLUGINS JS -->
+        <!-- BEGIN THEME JS -->
+        <script src="Scripts/main.min.js"></script>
+
+
+
+
+
+        <!-- END PAGE LEVEL JS -->
 
 
 
@@ -582,7 +606,7 @@
 
     </form>
 
-<%--    <script src="Scripts/jquery-3.4.1.slim.min.js"></script>
+    <%--    <script src="Scripts/jquery-3.4.1.slim.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>--%>
 </body>

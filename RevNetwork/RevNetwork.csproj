@@ -94,6 +94,7 @@
     <Content Include="Admin\Scripts\Chart.min.js" />
     <Content Include="Admin\Scripts\chartjs-line-demo.js" />
     <Content Include="Admin\Scripts\chartjs-others-demo.js" />
+    <Content Include="Admin\Scripts\Controller\Voucher.js" />
     <Content Include="Admin\Scripts\dashboard-demo.js" />
     <Content Include="Admin\Scripts\easypiechart-demo.js" />
     <Content Include="Admin\Scripts\esm\popper-utils.js" />
@@ -183,6 +184,7 @@
     <Content Include="Admin\Scripts\umd\popper-utils.min.js" />
     <Content Include="Admin\Scripts\umd\popper.js" />
     <Content Include="Admin\Scripts\umd\popper.min.js" />
+    <Content Include="Admin\Voucher.aspx" />
     <Content Include="ContactDefault.aspx" />
     <Content Include="ContactExtv3.aspx" />
     <Content Include="Content\theme.min.css" />
@@ -368,6 +370,13 @@
     <Content Include="webfonts\fa-solid-900.woff2" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Voucher.aspx.cs">
+      <DependentUpon>Voucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Voucher.aspx.designer.cs">
+      <DependentUpon>Voucher.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ContactDefault.aspx.cs">
       <DependentUpon>ContactDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
