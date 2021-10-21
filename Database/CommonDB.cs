@@ -245,5 +245,51 @@ namespace Database
                 }
             }
         }
+
+        public static DataSet ExecuteScalarDataSet(string storedProcedureName, SqlParameter[] spmCmdParams)
+        {
+            DataSet dsReader = new DataSet();
+
+            using (SqlConnection scnConn = new SqlConnection(sConnString))
+            {
+                scnConn.Open();
+                using (SqlCommand scmCmd = new SqlCommand(storedProcedureName, scnConn))
+                {
+                    scmCmd.CommandType = CommandType.StoredProcedure;
+                    if (spmCmdParams != null)
+                    {
+                        spmCmdParams.ToList().ForEach(p => scmCmd.Parameters.Add(p));
+                    }
+
+                    SqlDataAdapter sdaReader = new SqlDataAdapter(scmCmd);
+                    sdaReader.Fill(dsReader);
+                    scmCmd.ExecuteNonQuery();
+                    return dsReader;
+                }
+            }
+        }
+
+        public static DataTable ExecuteScalarDataTable(string storedProcedureName, SqlParameter[] spmCmdParams)
+        {
+            DataTable dtReader = new DataTable();
+
+            using (SqlConnection scnConn = new SqlConnection(sConnString))
+            {
+                scnConn.Open();
+                using (SqlCommand scmCmd = new SqlCommand(storedProcedureName, scnConn))
+                {
+                    scmCmd.CommandType = CommandType.StoredProcedure;
+                    if (spmCmdParams != null)
+                    {
+                        spmCmdParams.ToList().ForEach(p => scmCmd.Parameters.Add(p));
+                    }
+
+                    SqlDataAdapter sdaReader = new SqlDataAdapter(scmCmd);
+                    sdaReader.Fill(dtReader);
+                    scmCmd.ExecuteNonQuery();
+                    return dtReader;
+                }
+            }
+        }
     }
 }
