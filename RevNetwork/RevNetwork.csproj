@@ -85,7 +85,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Backend\Content\Images\QR_Code\QrCode.jpg" />
     <Content Include="Admin\Backend\Index.aspx" />
+    <Content Include="Admin\Backend\Scripts\Controller\jquery-1.6.min.js" />
+    <Content Include="Admin\Backend\Scripts\Controller\Voucher.js" />
     <Content Include="Admin\Backend\Scripts\dist\css\adminlte.css" />
     <Content Include="Admin\Backend\Scripts\dist\css\adminlte.min.css" />
     <Content Include="Admin\Backend\Scripts\dist\css\alt\adminlte.components.css" />

@@ -17,8 +17,71 @@ namespace RevNetwork.Admin.Backend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            BindVoucherDetails();
         }
+
+        [WebMethod]
+        public static string GetVoucherName(string searchTerm)
+        {
+            string query = "usp_ManageVoucher";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Action", "GetAll");
+            cmd.Parameters.AddWithValue("@VoucherName", searchTerm);
+            return GetData(cmd).GetXml();
+        }
+
+        [WebMethod]
+        public static string GetVoucherValue(string searchTerm)
+        {
+            string query = "usp_ManageVoucher";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Action", "GetAll");
+            cmd.Parameters.AddWithValue("@VoucherCode", searchTerm);
+            return GetData(cmd).GetXml();
+        }
+
+        [WebMethod]
+        public static string GetVoucherStatus(string searchTerm)
+        {
+            string query = "usp_ManageVoucher";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Action", "GetAll");
+            cmd.Parameters.AddWithValue("@VoucherStatus", searchTerm);
+            return GetData(cmd).GetXml();
+        }
+
+        private static DataSet GetData(SqlCommand cmd)
+        {
+            string strConnString = ConfigurationManager.ConnectionStrings["ConnString_Local"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(strConnString))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter())
+                {
+                    cmd.Connection = con;
+                    sda.SelectCommand = cmd;
+                    using (DataSet ds = new DataSet())
+                    {
+                        sda.Fill(ds, "tbl_Voucher");
+                        return ds;
+                    }
+                }
+            }
+        }
+
+        public void BindVoucherDetails()
+        {
+            DataTable dtRpt = new DataTable();
+            SqlParameter[] Parameter = null;
+            Parameter = new SqlParameter[1];
+            Parameter[0] = new SqlParameter("@Action", "GetAll");
+            dtRpt = CommonDB.ExecuteScalarDataTable("usp_ManageVoucher", Parameter);
+            rptVoucher.DataSource = dtRpt;
+            rptVoucher.DataBind();
+        }
+
         [WebMethod]
         public static List<string> getVoucherNames(string Vouchertext)
         {

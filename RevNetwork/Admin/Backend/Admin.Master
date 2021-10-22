@@ -11,6 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Revotech | Dashboard</title>
 
+
+
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -228,7 +231,7 @@
                                   
                                 </p>
                             </a>
-                           
+
                         </li>
                         <li class="nav-item">
                             <a href="pages/widgets.html" class="nav-link">
@@ -348,14 +351,21 @@
             </div>
         </footer>
     </div>
-    <!-- jQuery -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js">
+    </script>
+    <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>--%>
+    <%--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>--%>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+    <!-- jQuery
     <script src="Scripts/plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
+
     <script src="Scripts/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+   Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
-</script>
+    </script>
     <!-- Bootstrap 4 -->
     <script src="Scripts/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
@@ -363,8 +373,10 @@
     <!-- Sparkline -->
     <script src="Scripts/plugins/sparklines/sparkline.js"></script>
     <!-- JQVMap -->
-    <script src="Scripts/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="Scripts/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+
+    <%-- <script src="Scripts/plugins/jqvmap/jquery.vmap.min.js"></script>--%>
+    <%--<script src="Scripts/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>--%>
+
     <!-- jQuery Knob Chart -->
     <script src="Scripts/plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
@@ -381,6 +393,9 @@
     <!-- AdminLTE for demo purposes -->
     <script src="Scripts/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="Scripts/Controller/Voucher.js"></script>
     <script src="Scripts/dist/js/pages/dashboard.js"></script>
+
+
 </body>
 </html>
